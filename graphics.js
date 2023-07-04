@@ -100,7 +100,6 @@ switch(type) {
         context.moveTo(ttemp1,(canvas.height*0,1)*tempalt1);
         ttemp1 = 50 + ttemp1;
         context.lineTo(ttemp1,(canvas.height*0,1)*temp1);
-        document.getElementById('Temp1').innerText = temp1
         tempalt1 = temp1;
         break;
 
@@ -111,7 +110,6 @@ switch(type) {
         context.moveTo(ttemp2,(canvas.height*0,25)*tempalt2);
         ttemp2 = 50 + ttemp2;
         context.lineTo(ttemp2,(canvas.height*0,25)*temp2);
-        document.getElementById('Temp2').innerText = temp2
         feuchtalt = feucht;
         break;
 
