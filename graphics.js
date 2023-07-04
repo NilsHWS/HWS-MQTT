@@ -52,29 +52,21 @@ var currX = 0;
 var data = {
     "t": 0,
     "h": 0,
-    "v": 0,
-    "p": 0,
-    "a": 0,
+    
 };
 
 // externe Speicher fuer Zeichnen des Canvas
-var temp = 0;
-var feucht = 0;
-var gas = 0;
-var druck = 0;
-var hoehe = 0;
-var tempalt = 0;
-var feuchtalt = 0;
-var gasalt = 0;
-var druckalt = 0;
-var hoehealt = 0;
+// Bezeichnung der Variablen abhängig von den akommenden Bezeichnungen, bzw. topics am broker. Da mir diese aber momentan nicht bekannt sind, habe ich temp1 und temp2 als Platzhalter für die 
+// Johanna-Wittum-Schule und Alfons-Kern-Schule genommen - Nils
 
-var ttemp = 0;
-var tfeucht = 0;
-var tgas = 0;
-var tdruck = 0;
-var thoehe = 0;
+var temp1 = 0;
+var temp2 = 0;
 
+var tempalt1 = 0;
+var tempalt2 = 0;
+
+var ttemp1 = 0;
+var ttemp2 = 0;
 
 
 
@@ -104,57 +96,26 @@ switch(type) {
     case "t":
         context.strokeStyle = "green"
 
-        temp = data["t"];
-        context.moveTo(ttemp,(canvas.height*0,1)*tempalt);
-        ttemp = 50 + ttemp;
-        context.lineTo(ttemp,(canvas.height*0,1)*temp);
-        document.getElementById('Temp').innerText = temp
-        tempalt = temp;
+        temp1 = data["t"];
+        context.moveTo(ttemp1,(canvas.height*0,1)*tempalt1);
+        ttemp1 = 50 + ttemp1;
+        context.lineTo(ttemp1,(canvas.height*0,1)*temp1);
+        document.getElementById('Temp1').innerText = temp1
+        tempalt1 = temp1;
         break;
 
     case "h":
         context.strokeStyle = "red"
     
-        feucht = data["h"];
-        context.moveTo(tfeucht,(canvas.height*0,25)*feuchtalt);
-        tfeucht = 50 + tfeucht;
-        context.lineTo(tfeucht,(canvas.height*0,25)*feucht);
-        document.getElementById('Feucht').innerText = feucht
+        temp2 = data["h"];
+        context.moveTo(ttemp2,(canvas.height*0,25)*tempalt2);
+        ttemp2 = 50 + ttemp2;
+        context.lineTo(ttemp2,(canvas.height*0,25)*temp2);
+        document.getElementById('Temp2').innerText = temp2
         feuchtalt = feucht;
         break;
 
-    case "v":
-        context.strokeStyle = "blue"
-        
-        gas = data["v"];
-        context.moveTo(tgas,(canvas.height*0,4)*gasalt);
-        tgas = 50 + tgas;
-        context.lineTo(tgas,(canvas.height*0,1)*gas);
-        document.getElementById('Temp').innerText = gas
-        gasalt = gas;
-        break;
-
-    case "p":
-        context.strokeStyle = "orange"
-            
-        druck = data["p"];
-        context.moveTo(tdruck,(canvas.height*0,4)*druckalt);
-        tdruck = 50 + tdruck;
-        context.lineTo(tdruck,(canvas.height*0,1)*druck);
-        document.getElementById('Temp').innerText = druck
-        druckalt = druck;
-        break;
-
-    case "a":
-        context.strokeStyle = "orange"
-                
-        hoehe = data["a"];
-        context.moveTo(thoehe,(canvas.height*0,4)*hoehealt);
-        thoehe = 50 + thoehe;
-        context.lineTo(thoehe,(canvas.height*0,1)*hoehe);
-        document.getElementById('Temp').innerText = hoehe
-        hoehealt = hoehe;
-        break;
+ 
 }
 	
 	//::TODO:: für jede Datenreihe mit moveTo und lineTo eine Datenline zeichnen
